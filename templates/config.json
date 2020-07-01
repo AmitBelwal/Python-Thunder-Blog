@@ -1,0 +1,16 @@
+{
+  "parameters":
+  {
+    "local_server": "True",
+    "local_uri": "mysql+pymysql://root:root@localhost/BlogDB",
+    "fb_url": "https://facebook.com/blog",
+    "tw_url": "https://twitter.com/blog",
+    "git_url": "https://github.com/blog",
+    "gmail-user": "",
+    "gmail-password": "",
+    "no_of_posts": 5,
+    "user" : "qwerty@qwerty.com",
+    "pass" : "qwerty",
+    "location" : "/home/amit/PycharmProjects/Blog/static/file"
+  }
+}

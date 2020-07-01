@@ -1,0 +1,63 @@
+{%  extends "layout.html" %}
+{% block title %}
+  <header class="masthead" style="background-image: url('{{ url_for('static', filename= "img/home-bg.jpg") }}'    )">
+    <div class="overlay"></div>
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <div class="site-heading">
+            <h1>Blog Thunder</h1>
+            <span class="subheading">Experience blogging....</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto">
+      <h1> Basic actions</h1>
+      <a href="/edit/0"><button class="btn btn-primary">Add new post</button></a>
+      <a href="/logout"><button class="btn btn-primary">Logout</button></a>
+      <hr>
+      <h1> Upload a file</h1>
+      <form action="/upload" method="post" enctype="multipart/form-data">
+        <input type="file" name="uploader" size="10">
+        <button type="submit" class="btn btn-primary">Upload</button>
+      </form>
+      <hr>
+   <table class="table">
+    <thead>
+      <tr>
+        <th>SNO</th>
+        <th>POSTED_BY</th>
+        <th>POSTED_ON</th>
+        <th>ADD</th>
+        <th>DELETE</th>
+      </tr>
+    </thead>
+
+    <tbody>
+{% for post in posts %}
+      <tr>
+        <td>{{ post.SNO }}</td>
+        <td>{{ post.POSTED_BY }}</td>
+        <td>{{ post.POSTED_ON }}</td>
+        <td><a href="/edit/{{ post.SNO }}"><button class="btn btn-primary">ADD</button></a></td>
+          <td><a href="/delete/{{ post.SNO }}"><button class="btn btn-primary">DELETE</button></a></td>
+      </tr>
+{% endfor %}
+    </tbody>
+
+  </table>
+
+
+
+      </div>
+    </div>
+  </div>
+
+{% endblock %}
